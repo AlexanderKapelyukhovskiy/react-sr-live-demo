@@ -82,5 +82,4 @@ app.get("/", async (_req, res) => {
   res.send(index.replace("{{rendered}}", rendered));
 });
 
-app.listen(80);
-console.log("Server is listening");
+app.listen(3000, () => console.log("Server is listening"));

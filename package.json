@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "babel-node server",
-    "build": "webpack"
+    "build": "webpack",
+    "start2": "now dev"
   },
   "keywords": [],
   "author": "",
@@ -14,7 +15,8 @@
   "dependencies": {
     "express": "^4.17.1",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "vercel": "^19.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.7.7",

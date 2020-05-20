@@ -1,8 +1,0 @@
-module.exports = {
-  text: `<html>
-  <body>
-    <div id="Container">{{rendered}}</div>
-    <script src="/client.js"></script>
-  </body>
-</html>`,
-};

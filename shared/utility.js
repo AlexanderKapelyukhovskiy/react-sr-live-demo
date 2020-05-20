@@ -1,7 +1,4 @@
-module.exports = {
-  handleModifyAnswerVotes,
-};
-function handleModifyAnswerVotes(answers, answerId, vote) {
+export function handleModifyAnswerVotes(answers, answerId, vote) {
   return answers.map((a) => {
     if (a.answerId !== answerId) {
       return a;

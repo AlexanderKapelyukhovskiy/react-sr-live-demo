@@ -1,6 +1,28 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import App from "./App";
+import { handleModifyAnswerVotes } from "../shared/utility";
 
-const App = () => <div>This is React component</div>;
+let state = undefined;
 
-ReactDOM.render(<App />, document.querySelector("#Container"));
+fetch("/data")
+  .then((data) => data.json())
+  .then((json) => {
+    state = json;
+    console.log(json);
+    render(json);
+  });
+
+function handleVote(answerId, vote) {
+  state.answers = handleModifyAnswerVotes(state.answers, answerId, vote);
+  fetch(`/vote/${answerId}?vote=${vote}`);
+
+  render();
+}
+
+function render() {
+  ReactDOM.hydrate(
+    <App {...state} handleModifyAnswerVotes={handleVote} />,
+    document.getElementById("Container")
+  );
+}
